@@ -113,7 +113,7 @@ export default function HeroSlider() {
       ))}
 
       {/* Content — positioned in lower third */}
-      <div className="relative z-10 h-full flex flex-col justify-end pb-52 px-8 md:px-16 lg:px-24 text-white">
+      <div className="relative z-10 h-full flex flex-col justify-end pb-40 md:pb-52 px-5 md:px-16 lg:px-24 text-white">
         <div key={`content-${current}`} className="animate-fade-in-up max-w-6xl">
 
           {/* HIGH-END INCLUSIONS */}
@@ -121,7 +121,7 @@ export default function HeroSlider() {
             <>
               <h1
                 className="font-black leading-[0.9] uppercase tracking-tight mb-4"
-                style={{ fontSize: "clamp(64px, 12vw, 170px)", fontFamily: "var(--font-raleway)" }}
+                style={{ fontSize: "clamp(44px, 12vw, 170px)", fontFamily: "var(--font-raleway)" }}
               >
                 <span className="block text-white drop-shadow-lg">HIGH-END</span>
                 <span
@@ -157,7 +157,7 @@ export default function HeroSlider() {
               )}
               <h1
                 className="font-black leading-[0.9] uppercase tracking-tight"
-                style={{ fontSize: "clamp(64px, 12vw, 170px)", fontFamily: "var(--font-raleway)" }}
+                style={{ fontSize: "clamp(44px, 12vw, 170px)", fontFamily: "var(--font-raleway)" }}
               >
                 <span className="text-white drop-shadow-lg">BRICK </span>
                 <span style={{ WebkitTextStroke: "2px rgba(255,255,255,0.9)", color: "transparent" }}>VENEER</span>
@@ -181,7 +181,7 @@ export default function HeroSlider() {
               <h1
                 className="font-light leading-tight mb-6 drop-shadow-lg"
                 style={{
-                  fontSize: "clamp(40px, 6vw, 90px)",
+                  fontSize: "clamp(32px, 6vw, 90px)",
                   fontFamily: "var(--font-raleway)",
                 }}
               >
@@ -205,8 +205,8 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* Right-side circular thumbnail navigation */}
-      <div className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-3">
+      {/* Right-side circular thumbnail navigation — hidden on small screens */}
+      <div className="hidden sm:flex absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-20 flex-col gap-3">
         {slides.map((s, i) => (
           <button
             key={i}
@@ -287,34 +287,52 @@ function SearchBar() {
 
   return (
     <div className="bg-white shadow-2xl border-t border-gray-100">
-      <div className="max-w-none mx-auto">
-        <div className="flex items-stretch">
-          {filters.map((f, idx) => (
-            <div
-              key={f.label}
-              className="flex-1 border-r border-gray-100 last:border-r-0"
-            >
-              <div className="px-5 py-4">
-                <div className="flex items-center gap-2 mb-1.5">
-                  <span className="text-[#987642]">{f.icon}</span>
-                  <p className="text-[9px] font-bold text-[#1c1c1c] tracking-[0.2em]">{f.label}</p>
-                </div>
-                <select className="text-sm text-gray-500 bg-transparent w-full focus:outline-none cursor-pointer">
-                  {f.options.map((o) => (
-                    <option key={o}>{o}</option>
-                  ))}
-                </select>
+      {/* Mobile: 2-col grid */}
+      <div className="grid grid-cols-2 sm:hidden">
+        {filters.map((f) => (
+          <div key={f.label} className="border-b border-r border-gray-100 last:border-r-0">
+            <div className="px-4 py-3">
+              <div className="flex items-center gap-1.5 mb-1">
+                <span className="text-[#987642]">{f.icon}</span>
+                <p className="text-[8px] font-bold text-[#1c1c1c] tracking-wider">{f.label}</p>
               </div>
+              <select className="text-xs text-gray-500 bg-transparent w-full focus:outline-none cursor-pointer">
+                {f.options.map((o) => <option key={o}>{o}</option>)}
+              </select>
             </div>
-          ))}
-          <Link
-            href="/designs"
-            className="bg-[#1c1c1c] text-white text-sm font-semibold px-8 flex items-center gap-2 hover:bg-[#987642] transition-colors whitespace-nowrap"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-            Find a home
-          </Link>
-        </div>
+          </div>
+        ))}
+        <Link
+          href="/designs"
+          className="col-span-2 bg-[#1c1c1c] text-white text-sm font-semibold py-3 flex items-center justify-center gap-2 hover:bg-[#987642] transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          Find a home
+        </Link>
+      </div>
+
+      {/* Desktop: single row */}
+      <div className="hidden sm:flex items-stretch">
+        {filters.map((f) => (
+          <div key={f.label} className="flex-1 border-r border-gray-100 last:border-r-0">
+            <div className="px-5 py-4">
+              <div className="flex items-center gap-2 mb-1.5">
+                <span className="text-[#987642]">{f.icon}</span>
+                <p className="text-[9px] font-bold text-[#1c1c1c] tracking-[0.2em]">{f.label}</p>
+              </div>
+              <select className="text-sm text-gray-500 bg-transparent w-full focus:outline-none cursor-pointer">
+                {f.options.map((o) => <option key={o}>{o}</option>)}
+              </select>
+            </div>
+          </div>
+        ))}
+        <Link
+          href="/designs"
+          className="bg-[#1c1c1c] text-white text-sm font-semibold px-8 flex items-center gap-2 hover:bg-[#987642] transition-colors whitespace-nowrap"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          Find a home
+        </Link>
       </div>
     </div>
   );

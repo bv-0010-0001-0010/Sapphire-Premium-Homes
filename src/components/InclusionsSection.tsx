@@ -13,7 +13,7 @@ export default function InclusionsSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2
-            className="text-5xl md:text-7xl lg:text-8xl font-thin text-[#333] uppercase tracking-wide mb-10"
+            className="text-3xl md:text-5xl lg:text-7xl font-thin text-[#333] uppercase tracking-wide mb-6 md:mb-10"
             style={{ fontFamily: "var(--font-raleway)" }}
           >
             OUR STANDARD INCLUSIONS

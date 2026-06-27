@@ -4,6 +4,18 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+function useCardsVisible() {
+  const [cards, setCards] = useState(3);
+  useEffect(() => {
+    const update = () =>
+      setCards(window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 3);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+  return cards;
+}
+
 const portfolioItems = [
   {
     image: "/images/portfolio-bella-vista.jpg",
@@ -31,13 +43,16 @@ const portfolioItems = [
   },
 ];
 
-// Clone first 3 items at end for seamless infinite loop
-const track = [...portfolioItems, ...portfolioItems.slice(0, 3)];
-const CARD_WIDTH_PCT = 100 / 3; // 3 visible at once
+const BASE_ITEMS = portfolioItems;
 
 export default function PortfolioSection() {
-  const [index, setIndex] = useState(0);       // current leading card index
-  const [animated, setAnimated] = useState(true); // false = instant jump (no transition)
+  const cardsVisible = useCardsVisible();
+  // Clone enough items at end for seamless loop
+  const track = [...BASE_ITEMS, ...BASE_ITEMS.slice(0, cardsVisible)];
+  const cardWidthPct = 100 / cardsVisible;
+
+  const [index, setIndex] = useState(0);
+  const [animated, setAnimated] = useState(true);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const transitioning = useRef(false);
 
@@ -55,10 +70,9 @@ export default function PortfolioSection() {
     setIndex((i) => Math.max(0, i - 1));
   }, []);
 
-  // After sliding to the cloned section, instantly jump back to real start
   const onTransitionEnd = () => {
     transitioning.current = false;
-    if (index >= portfolioItems.length) {
+    if (index >= BASE_ITEMS.length) {
       setAnimated(false);
       setIndex(0);
     }
@@ -78,7 +92,7 @@ export default function PortfolioSection() {
   const handlePrev = () => { retreat(); resetTimer(); };
   const handleNext = () => { advance(); resetTimer(); };
 
-  const translateX = -(index * CARD_WIDTH_PCT);
+  const translateX = -(index * cardWidthPct);
 
   return (
     <section className="bg-[#f5f5f5] py-20 px-6">
@@ -118,8 +132,8 @@ export default function PortfolioSection() {
           <div
             className="flex"
             style={{
-              width: `${(track.length / 3) * 100}%`,
-              transform: `translateX(${translateX / (track.length / 3)}%)`,
+              width: `${(track.length / cardsVisible) * 100}%`,
+              transform: `translateX(${translateX / (track.length / cardsVisible)}%)`,
               transition: animated ? "transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)" : "none",
             }}
             onTransitionEnd={onTransitionEnd}
@@ -133,7 +147,7 @@ export default function PortfolioSection() {
                 <Link
                   href={`/portfolio/${p.slug}`}
                   className="relative block overflow-hidden group cursor-pointer"
-                  style={{ height: 460 }}
+                  style={{ height: cardsVisible === 1 ? 320 : 460 }}
                 >
                   <Image
                     src={p.image}

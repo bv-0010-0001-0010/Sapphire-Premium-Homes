@@ -50,8 +50,8 @@ const testimonials = [
 export default function TestimonialsSection() {
   const [active, setActive] = useState(0);
 
-  const visibleCount = 4;
-  const visible = Array.from({ length: visibleCount }, (_, i) =>
+  // Show 1 on mobile, 2 on tablet, 4 on desktop — computed via CSS grid; JS only needs 4 items
+  const visible = Array.from({ length: 4 }, (_, i) =>
     testimonials[(active + i) % testimonials.length]
   );
 
@@ -69,12 +69,12 @@ export default function TestimonialsSection() {
           {/* Left arrow */}
           <button
             onClick={() => setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 z-10 w-11 h-11 rounded-full bg-[#987642] text-white flex items-center justify-center hover:bg-[#7a5f34] transition-colors shadow"
+            className="absolute left-0 top-1/2 -translate-y-1/2 md:-translate-x-6 z-10 w-11 h-11 rounded-full bg-[#987642] text-white flex items-center justify-center hover:bg-[#7a5f34] transition-colors shadow"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
           </button>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             {visible.map((t, i) => (
               <div key={i} className="bg-white rounded-xl p-6 flex flex-col items-center text-center">
                 <div className="flex gap-0.5 mb-3">
@@ -102,7 +102,7 @@ export default function TestimonialsSection() {
           {/* Right arrow */}
           <button
             onClick={() => setActive((prev) => (prev + 1) % testimonials.length)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 z-10 w-11 h-11 rounded-full bg-[#987642] text-white flex items-center justify-center hover:bg-[#7a5f34] transition-colors shadow"
+            className="absolute right-0 top-1/2 -translate-y-1/2 md:translate-x-6 z-10 w-11 h-11 rounded-full bg-[#987642] text-white flex items-center justify-center hover:bg-[#7a5f34] transition-colors shadow"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
           </button>

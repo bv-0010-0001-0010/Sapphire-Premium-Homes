@@ -5,7 +5,7 @@ export default function DisplayHomeSection() {
     <section id="display-home" className="py-20 px-6 bg-white text-center">
       <div className="max-w-4xl mx-auto">
         <h2
-          className="text-4xl md:text-5xl lg:text-6xl font-light text-[#444] uppercase tracking-wide mb-8"
+          className="text-2xl md:text-4xl lg:text-5xl font-light text-[#444] uppercase tracking-wide mb-6"
           style={{ fontFamily: "var(--font-raleway)" }}
         >
           Australia&apos;s BIGGEST and THE BEST DISPLAY HOME

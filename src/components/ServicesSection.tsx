@@ -60,7 +60,7 @@ export default function ServicesSection() {
               Our Solutions
             </div>
             <h2
-              className="text-4xl md:text-5xl font-light text-white leading-tight mb-8"
+              className="text-2xl md:text-4xl font-light text-white leading-tight mb-8"
               style={{ fontFamily: "var(--font-raleway)" }}
             >
               We ready to provide services

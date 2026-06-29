@@ -10,7 +10,7 @@ export default function DisplayHomeSection() {
         >
           Australia&apos;s BIGGEST and THE BEST DISPLAY HOME
         </h2>
-        <p className="text-[#444] text-base md:text-lg leading-relaxed mb-4">
+        <p className="text-[#444] text-sm md:text-base leading-relaxed mb-4">
           Sapphire Premium Homes is set to make an indelible mark on the Australian real estate landscape with the
           construction of Australia&apos;s largest display home at Homequest Bella Vista. This ambitious project aims
           to redefine the standards of luxury living, showcasing specifications and finishes that have never been
@@ -18,7 +18,7 @@ export default function DisplayHomeSection() {
           ceilings on the ground floor and 3.3 meters on the first floor will set this residence apart as a
           pinnacle of opulence and grandeur.
         </p>
-        <p className="text-[#444] text-base md:text-lg leading-relaxed mb-10">
+        <p className="text-[#444] text-sm md:text-base leading-relaxed mb-10">
           Don&apos;t miss out on this chance to see what sets Sapphire Premium Homes apart.
         </p>
         <Link

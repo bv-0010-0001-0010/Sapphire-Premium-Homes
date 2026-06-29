@@ -5,7 +5,7 @@ export default function CTASection() {
     <section className="bg-[#222a44] py-20 px-8 md:px-16">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
         <h2
-          className="text-4xl md:text-5xl lg:text-6xl font-thin text-white leading-tight"
+          className="text-2xl md:text-4xl lg:text-6xl font-thin text-white leading-tight text-center md:text-left"
           style={{ fontFamily: "var(--font-raleway)" }}
         >
           Your Dream Project Awaits &ndash;

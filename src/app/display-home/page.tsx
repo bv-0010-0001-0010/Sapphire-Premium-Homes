@@ -77,8 +77,8 @@ export default function DisplayHomePage() {
               Australia&apos;s BIGGEST and THE BEST DISPLAY HOME
             </h2>
             <p className="text-lg">
-              <span className="text-[#987642] font-medium">2 Ernesta Place</span>{" "}
-              <span className="text-[#333]">Bella Vista NSW 2153</span>
+              <span className="text-[#987642] font-medium">3 Basque Street</span>{" "}
+              <span className="text-[#333]">Box Hill NSW 2765</span>
             </p>
           </div>
         </section>
@@ -132,7 +132,7 @@ export default function DisplayHomePage() {
             </h2>
             <div className="w-12 h-[2px] bg-[#987642] mb-10" />
             <div className="text-[#987642] text-sm tracking-widest mb-8 uppercase">
-              Display Home – Bella Vista
+              Display Home – Box Hill NSW 2765
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {specs.map((s) => (

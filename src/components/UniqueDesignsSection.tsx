@@ -5,7 +5,7 @@ export default function UniqueDesignsSection() {
     <section className="bg-white py-20 px-6">
       <div className="max-w-4xl mx-auto text-center mb-16">
         <h2
-          className="text-4xl md:text-5xl lg:text-6xl font-light text-[#444] uppercase tracking-wide mb-2"
+          className="text-2xl md:text-4xl lg:text-6xl font-light text-[#444] uppercase tracking-wide mb-2"
           style={{ fontFamily: "var(--font-raleway)" }}
         >
           OUR UNIQUE DESIGNS

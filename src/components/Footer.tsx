@@ -29,10 +29,20 @@ export default function Footer() {
           </h4>
           <div className="flex items-start gap-4 mb-5">
             <div className="w-10 h-10 rounded-full border border-[#987642]/50 flex items-center justify-center flex-shrink-0 mt-0.5">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#987642" strokeWidth="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#987642" strokeWidth="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <div>
-              <p className="text-white/70 text-sm leading-relaxed">NSW 2765</p>
+              <p className="text-white/70 text-sm leading-relaxed font-semibold text-white/90">Office</p>
+              <p className="text-white/70 text-sm leading-relaxed">142 Abell Road, Marsden Park NSW 2765</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4 mb-5">
+            <div className="w-10 h-10 rounded-full border border-[#987642]/50 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#987642" strokeWidth="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <p className="text-white/70 text-sm leading-relaxed font-semibold text-white/90">Display Home</p>
+              <p className="text-white/70 text-sm leading-relaxed">3 Basque Street, Box Hill NSW 2765</p>
             </div>
           </div>
           <div className="flex items-center gap-4 mb-8">
@@ -104,16 +114,9 @@ export default function Footer() {
 
           {/* Copyright */}
           <p className="text-white/50 text-xs text-center">
-            © Copyright Sapphire Premium Homes Pty Ltd ABN 30 691 829 044 ACN 691 829 044
+            © Copyright Sapphire Premium Homes Pty Ltd | ABN 30 691 829 044 | ACN 691 829 044 | Licence No. 496063C
           </p>
 
-          {/* HIA Member badge */}
-          <div className="flex items-center gap-2 border border-white/30 px-3 py-2">
-            <div className="w-10 h-10 bg-[#987642] rounded flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <span className="text-white text-sm font-bold tracking-wider">MEMBER</span>
-          </div>
         </div>
       </div>
     </footer>

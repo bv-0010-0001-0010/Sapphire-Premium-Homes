@@ -18,18 +18,18 @@ export default function InclusionsSection() {
           >
             OUR STANDARD INCLUSIONS
           </h2>
-          <p className="text-[#666] max-w-4xl mx-auto leading-relaxed mb-6">
+          <p className="text-[#666] text-sm md:text-base max-w-4xl mx-auto leading-relaxed mb-6">
             Sapphire Premium Homes offers the highest standard inclusions in Sydney, providing exceptional quality and
             value in every build. We include almost everything upfront, from premium materials to top-tier finishes,
             ensuring that your home is equipped with the finest features. This transparent approach means you know
             exactly what&apos;s included in your project, with no hidden surprises. The only costs left to be
             determined are those influenced by site-specific factors or any custom changes you may request.
           </p>
-          <p className="text-[#666] max-w-3xl mx-auto leading-relaxed mb-4">
+          <p className="text-[#666] text-sm md:text-base max-w-3xl mx-auto leading-relaxed mb-4">
             At Sapphire Premium Homes, we aim to deliver a seamless, stress-free experience, allowing you to focus on
             creating your perfect luxury home.
           </p>
-          <p className="text-[#666]">
+          <p className="text-[#666] text-sm md:text-base">
             Feel free to explore or call us on{" "}
             <a href="tel:0400288799" className="text-[#987642] hover:underline">
               0400 288 799

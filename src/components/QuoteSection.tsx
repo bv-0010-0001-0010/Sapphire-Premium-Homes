@@ -3,7 +3,7 @@ export default function QuoteSection() {
     <section className="bg-[#222a44] py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <h2
-          className="text-2xl md:text-3xl lg:text-4xl font-light text-[#987642]/80 leading-relaxed mb-8"
+          className="text-base md:text-2xl lg:text-4xl font-light text-[#987642]/80 leading-relaxed mb-8"
           style={{ fontFamily: "var(--font-raleway)" }}
         >
           Building is not just about money – it&apos;s about creating harmony between materials,
@@ -17,13 +17,13 @@ export default function QuoteSection() {
           In the domain of architectural imagination and construction, our creativity knows no bounds
         </p>
         <h3
-          className="text-3xl md:text-5xl lg:text-6xl font-light text-white/80 leading-tight mb-2"
+          className="text-xl md:text-4xl lg:text-6xl font-light text-white/80 leading-tight mb-2"
           style={{ fontFamily: "var(--font-raleway)" }}
         >
           &ldquo;We are dedicated to transforming
         </h3>
         <h3
-          className="text-3xl md:text-5xl lg:text-6xl font-light text-white/80 leading-tight italic"
+          className="text-xl md:text-4xl lg:text-6xl font-light text-white/80 leading-tight italic"
           style={{ fontFamily: "var(--font-raleway)" }}
         >
           your dreams into reality.&rdquo;

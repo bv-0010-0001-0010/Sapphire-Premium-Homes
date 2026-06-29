@@ -59,17 +59,33 @@ export default function TestimonialsSection() {
     <section className="bg-[#f0f0f0] py-20 px-6">
       <div className="max-w-[1300px] mx-auto">
         <h2
-          className="text-4xl md:text-5xl font-thin text-[#987642] mb-16 text-center tracking-wide"
+          className="text-2xl md:text-4xl font-thin text-[#987642] mb-10 md:mb-16 text-center tracking-wide"
           style={{ fontFamily: "var(--font-raleway)" }}
         >
           WHAT OUR CLIENTS SAY..
         </h2>
 
-        <div className="relative">
-          {/* Left arrow */}
+        {/* Arrows row on mobile, overlay on desktop */}
+        <div className="flex justify-center gap-3 mb-6 md:hidden">
           <button
             onClick={() => setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 md:-translate-x-6 z-10 w-11 h-11 rounded-full bg-[#987642] text-white flex items-center justify-center hover:bg-[#7a5f34] transition-colors shadow"
+            className="w-10 h-10 rounded-full bg-[#987642] text-white flex items-center justify-center hover:bg-[#7a5f34] transition-colors shadow"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button
+            onClick={() => setActive((prev) => (prev + 1) % testimonials.length)}
+            className="w-10 h-10 rounded-full bg-[#987642] text-white flex items-center justify-center hover:bg-[#7a5f34] transition-colors shadow"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+
+        <div className="relative">
+          {/* Left arrow — desktop only */}
+          <button
+            onClick={() => setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 z-10 w-11 h-11 rounded-full bg-[#987642] text-white items-center justify-center hover:bg-[#7a5f34] transition-colors shadow"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
           </button>
@@ -99,10 +115,10 @@ export default function TestimonialsSection() {
             ))}
           </div>
 
-          {/* Right arrow */}
+          {/* Right arrow — desktop only */}
           <button
             onClick={() => setActive((prev) => (prev + 1) % testimonials.length)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 md:translate-x-6 z-10 w-11 h-11 rounded-full bg-[#987642] text-white flex items-center justify-center hover:bg-[#7a5f34] transition-colors shadow"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 z-10 w-11 h-11 rounded-full bg-[#987642] text-white items-center justify-center hover:bg-[#7a5f34] transition-colors shadow"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
           </button>

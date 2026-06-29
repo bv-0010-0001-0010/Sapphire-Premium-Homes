@@ -100,7 +100,7 @@ export default function HomeDesignsSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10">
           <h2
-            className="text-2xl md:text-4xl font-light text-[#444] uppercase tracking-wide leading-snug"
+            className="text-lg md:text-3xl font-light text-[#444] uppercase tracking-wide leading-snug"
             style={{ fontFamily: "var(--font-raleway)" }}
           >
             LOOKING FOR INSPIRATION? LOOK NO FURTHER
@@ -122,17 +122,17 @@ export default function HomeDesignsSection() {
                 style={{ marginRight: "16px" }}
               >
                 <div className="bg-white grid grid-cols-1 md:grid-cols-2 shadow-sm">
-                  <div className="relative h-72 md:h-[380px]">
+                  <div className="relative h-56 md:h-[380px]">
                     <Image src={item.image} alt={item.title} fill className="object-cover" />
                   </div>
-                  <div className="flex flex-col justify-center p-8 md:p-12">
+                  <div className="flex flex-col justify-center p-5 md:p-12">
                     <h3
-                      className="text-lg md:text-2xl font-semibold text-[#1c1c1c] uppercase tracking-wide mb-6"
+                      className="text-base md:text-2xl font-semibold text-[#1c1c1c] uppercase tracking-wide mb-4"
                       style={{ fontFamily: "var(--font-raleway)" }}
                     >
                       {item.title}
                     </h3>
-                    <div className="flex items-center gap-6 mb-8">
+                    <div className="grid grid-cols-2 gap-3 mb-6">
                       <Stat icon="bed" value={item.beds} />
                       <Stat icon="bath" value={item.baths} />
                       <Stat icon="car" value={item.cars} />
@@ -153,17 +153,17 @@ export default function HomeDesignsSection() {
           {/* Left arrow */}
           <button
             onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-[#987642] text-white flex items-center justify-center hover:bg-[#7a5f34] transition-colors shadow-md"
+            className="absolute left-1 md:left-0 top-1/3 -translate-y-1/2 z-10 w-9 h-9 md:w-12 md:h-12 rounded-full bg-[#987642] text-white flex items-center justify-center hover:bg-[#7a5f34] transition-colors shadow-md"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6"/></svg>
           </button>
 
           {/* Right arrow */}
           <button
             onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-[#987642] text-white flex items-center justify-center hover:bg-[#7a5f34] transition-colors shadow-md"
+            className="absolute right-1 md:right-0 top-1/3 -translate-y-1/2 z-10 w-9 h-9 md:w-12 md:h-12 rounded-full bg-[#987642] text-white flex items-center justify-center hover:bg-[#7a5f34] transition-colors shadow-md"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6"/></svg>
           </button>
         </div>
 

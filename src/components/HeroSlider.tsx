@@ -96,7 +96,7 @@ export default function HeroSlider() {
           } ${i % 2 === 0 ? "hero-slide-even" : ""}`}
         >
           {/* Ken Burns wrapper — overflow hidden so zoom doesn't bleed */}
-          <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden hero-img-container">
             <Image
               key={i === current ? `active-${animKey}` : `idle-${i}`}
               src={s.image}
@@ -113,7 +113,7 @@ export default function HeroSlider() {
       ))}
 
       {/* Content — positioned in lower third */}
-      <div className="relative z-10 h-full flex flex-col justify-end pb-40 md:pb-52 px-5 md:px-16 lg:px-24 text-white">
+      <div className="relative z-10 h-full flex flex-col justify-end pb-14 md:pb-52 px-5 md:px-16 lg:px-24 text-white">
         <div key={`content-${current}`} className="animate-fade-in-up max-w-6xl">
 
           {/* HIGH-END INCLUSIONS */}
@@ -121,7 +121,7 @@ export default function HeroSlider() {
             <>
               <h1
                 className="font-black leading-[0.9] uppercase tracking-tight mb-4"
-                style={{ fontSize: "clamp(44px, 12vw, 170px)", fontFamily: "var(--font-raleway)" }}
+                style={{ fontSize: "clamp(32px, 12vw, 170px)", fontFamily: "var(--font-raleway)" }}
               >
                 <span className="block text-white drop-shadow-lg">HIGH-END</span>
                 <span
@@ -179,9 +179,9 @@ export default function HeroSlider() {
                 </p>
               )}
               <h1
-                className="font-light leading-tight mb-6 drop-shadow-lg"
+                className="font-light leading-tight mb-4 drop-shadow-lg"
                 style={{
-                  fontSize: "clamp(32px, 6vw, 90px)",
+                  fontSize: "clamp(26px, 6vw, 90px)",
                   fontFamily: "var(--font-raleway)",
                 }}
               >
@@ -228,8 +228,8 @@ export default function HeroSlider() {
         ))}
       </div>
 
-      {/* Search bar — overlaid at very bottom of hero */}
-      <div className="absolute bottom-0 left-0 right-0 z-20">
+      {/* Search bar — hidden on mobile, overlaid at bottom on desktop */}
+      <div className="hidden md:block absolute bottom-0 left-0 right-0 z-20">
         <SearchBar />
       </div>
     </section>

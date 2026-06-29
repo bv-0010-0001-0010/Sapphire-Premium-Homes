@@ -54,7 +54,7 @@ export default function WhyUsSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2
-            className="text-3xl md:text-4xl font-light text-[#333] uppercase tracking-wide mb-3"
+            className="text-xl md:text-3xl font-light text-[#333] uppercase tracking-wide mb-3"
             style={{ fontFamily: "var(--font-raleway)" }}
           >
             THIS IS WHAT WE DOING

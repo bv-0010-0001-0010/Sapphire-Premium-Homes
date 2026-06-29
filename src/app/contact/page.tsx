@@ -37,7 +37,27 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-semibold text-[#333] mb-1">Office</p>
-                    <p className="text-[#666]">NSW 2765</p>
+                    <p className="text-[#666]">142 Abell Road, Marsden Park NSW 2765</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full border border-[#987642]/50 flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#987642" strokeWidth="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[#333] mb-1">Display Home</p>
+                    <p className="text-[#666]">3 Basque Street, Box Hill NSW 2765</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full border border-[#987642]/50 flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#987642" strokeWidth="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[#333] mb-1">Licence / ABN / ACN</p>
+                    <p className="text-[#666] text-sm">Licence No. 496063C</p>
+                    <p className="text-[#666] text-sm">ABN 30 691 829 044</p>
+                    <p className="text-[#666] text-sm">ACN 691 829 044</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">

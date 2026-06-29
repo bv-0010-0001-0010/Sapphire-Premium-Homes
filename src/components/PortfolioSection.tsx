@@ -147,7 +147,7 @@ export default function PortfolioSection() {
                 <Link
                   href={`/portfolio/${p.slug}`}
                   className="relative block overflow-hidden group cursor-pointer"
-                  style={{ height: cardsVisible === 1 ? 320 : 460 }}
+                  style={{ height: 460 }}
                 >
                   <Image
                     src={p.image}
